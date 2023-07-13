@@ -13,7 +13,19 @@ import Detail from './features/pages/Detail/Detail';
 
 const App = () => {
   const [ characters, setCharacters ] = useState([]);
-  const [productList, setProductList] = useState([]);
+  const [ productList, setProductList ] = useState([]);
+
+  const addToList = (id) => {
+    const findElement = productList.find((element) => {
+      return element.id === id;
+    })
+    if (!findElement) {
+      const findCharacter = characters.find((char) => {
+        return char.id === id;
+      })
+      setProductList([ ...productList, findCharacter ]);
+    }
+  }
 
   useEffect(() => {
     axios.get('https://64a1dcaa0079ce56e2db71f6.mockapi.io/api/kombucha/products')
@@ -28,9 +40,9 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products characters={characters} />} />
-        <Route path="/detail/:id" element={<Detail characters={characters}/>} />
-        <Route path="/basket" element={<Basket />} />
+        <Route path="/products" element={<Products characters={characters} addToList={addToList} />} />
+        <Route path="/detail/:id" element={<Detail characters={characters} />} />
+        <Route path="/basket" element={<Basket productList={productList} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
