@@ -4,10 +4,12 @@ import eco from '../../../images/logoeco.png';
 import { BiCartAdd } from 'react-icons/bi'
 import { Link } from 'react-router-dom';
 
-const Products = ({ characters,  }) => {
+const Products = ({ characters, addToList }) => {
 
   const handleClick = (ev) => {
-
+    ev.preventDefault();
+    addToList(ev.target.id);
+    alert("¡El producto seleccionado se ha añadido a la cesta!")
   }
 
   return (
