@@ -62,3 +62,7 @@
     transition-property: all;
     background-color: red;
 }
+
+.empty-basket-title{
+    text-align: center;
+}

@@ -5,10 +5,10 @@ import Button from '../../core/Button/Button';
 
 const Basket = ({ productList, deleteFromList }) => {
 
-  const handleDelete = (ev) => {
-    ev.preventDefault();
+  const handleDelete = (id) => {
     const updatedProductList = productList.filter(product => product.id !== id);
     deleteFromList(updatedProductList);
+    alert("¡PRODUCTO ELIMINADO!");
   }
 
   return (
@@ -19,19 +19,23 @@ const Basket = ({ productList, deleteFromList }) => {
         <img src={image} alt="background" />
       </div>
 
-      <ul className='basket-products'>
-        {productList.map((product) => {
-          return (
-            <li key={product.id} className='basket-product-li'>
-              <img className='basket-product-image' src={product.image} alt={product.name} />
-              <h4 className='basket-product-name'>{product.name}</h4>
-              <img className='basket-product-eco-logo' src={eco} alt={product.name} />
-              <h4 className='product-price'>{product.price} €</h4>
-              <Button color="red" text="eliminar" onClick={handleDelete}/>
-            </li>
-          )
-        })}
-      </ul>
+      {productList.length === 0 ? (
+        <h2 className='empty-basket-title'>¡TU CESTA ESTÁ VACÍA!</h2>
+      ) : (
+        <ul className='basket-products'>
+          {productList.map((product) => {
+            return (
+              <li key={product.id} className='basket-product-li'>
+                <img className='basket-product-image' src={product.image} alt={product.name} />
+                <h4 className='basket-product-name'>{product.name}</h4>
+                <img className='basket-product-eco-logo' src={eco} alt={product.name} />
+                <h4 className='product-price'>{product.price} €</h4>
+                <Button color="red" text="eliminar" onClick={() => handleDelete(product.id)} />
+              </li>
+            )
+          })}
+        </ul>
+      )}
 
     </div>
   )

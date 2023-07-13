@@ -1,15 +1,15 @@
 import './styles/App.css';
+import axios from 'axios';
+import Products from './features/pages/Products/Products';
+import Detail from './features/pages/Detail/Detail';
+import Basket from './features/pages/Basket/Basket';
 import Header from './features/core/Header/Header';
 import Footer from './features/core/Footer/Footer';
-import NotFound from './features/NotFound';
-import Home from './features/pages/Home/Home';
-import Products from './features/pages/Products/Products'
-import Basket from './features/pages/Basket/Basket'
 import { Route, Routes } from 'react-router-dom';
+import Home from './features/pages/Home/Home';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Detail from './features/pages/Detail/Detail';
-
+import NotFound from './features/NotFound';
+import Login from './features/pages/Login/Login';
 
 const App = () => {
   const [ characters, setCharacters ] = useState([]);
@@ -27,7 +27,7 @@ const App = () => {
     }
   }
 
-  const deleteFromList = (id) => {
+  const deleteFromList = (updatedProductList) => {
     setProductList(updatedProductList);
   }
 
@@ -47,6 +47,7 @@ const App = () => {
         <Route path="/products" element={<Products characters={characters} addToList={addToList} />} />
         <Route path="/detail/:id" element={<Detail characters={characters} />} />
         <Route path="/basket" element={<Basket productList={productList} deleteFromList={deleteFromList} />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
@@ -54,4 +55,5 @@ const App = () => {
     </>
   )
 };
+
 export default App;
