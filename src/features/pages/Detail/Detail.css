@@ -1,0 +1,99 @@
+.detail-father-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 25px 0px 20px 0px;
+}
+
+.detail-title{
+    padding-bottom: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgb(45,41,35);
+}
+
+.product-detail-div{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    background-color: antiquewhite;
+}
+
+.product-detail-name{
+    color: rgb(1, 89, 1);
+    padding: 20px 0px;
+    text-align: center;
+}
+
+.ingredients{
+    letter-spacing: 2px;
+    padding-top: 10px;
+}
+
+.product-detail-ingredients{
+    width: 400px;
+    text-align: center;
+    margin: 10px 0px 25px 0px;
+    color: rgb(2, 158, 2);
+}
+
+.product-detail-image{
+    width: 400px;
+    height: auto;
+}
+
+.eco{
+    margin-top: 20px;
+}
+
+.big-image-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kombucha-image{
+    border: 10px rgba(115, 189, 3, 0.609) solid;
+    border-radius: 300px;
+    height: 500px;
+    margin-bottom: 20px;
+}
+
+.kombucha-image:hover{
+    border: 10px rgba(250, 105, 177, 0.387) solid;
+    cursor: pointer;
+    transition-duration: 1s;
+}
+
+.other-details-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.product-detail-eco-logo{
+    width: 60px;
+    padding: 10px 0px;
+}
+
+.product-detail-description{
+    font-size: 20px;
+    width: 600px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.product-detail-desc{
+    font-size: 20px;
+    width: 900px;
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.inci{
+    width: 80%
+}
