@@ -27,6 +27,10 @@ const App = () => {
     }
   }
 
+  const deleteFromList = (id) => {
+    setProductList(updatedProductList);
+  }
+
   useEffect(() => {
     axios.get('https://64a1dcaa0079ce56e2db71f6.mockapi.io/api/kombucha/products')
       .then(response => {
@@ -42,7 +46,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products characters={characters} addToList={addToList} />} />
         <Route path="/detail/:id" element={<Detail characters={characters} />} />
-        <Route path="/basket" element={<Basket productList={productList} />} />
+        <Route path="/basket" element={<Basket productList={productList} deleteFromList={deleteFromList} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
