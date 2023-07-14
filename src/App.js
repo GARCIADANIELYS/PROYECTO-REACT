@@ -12,6 +12,7 @@ import NotFound from './features/NotFound';
 import Login from './features/pages/Login/Login';
 
 const App = () => {
+
   const [ characters, setCharacters ] = useState([]);
   const [ productList, setProductList ] = useState([]);
 
