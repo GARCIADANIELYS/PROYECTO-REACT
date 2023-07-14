@@ -11,7 +11,8 @@ const Login = () => {
   const [formData, setFormData] = useState(initial_state);
 
   const handleInput = (ev) => {
-
+    const { name, value } = ev.target;
+    setFormData({...formData, [name]: value });
   }
 
   return (

@@ -15,6 +15,7 @@ const App = () => {
 
   const [ characters, setCharacters ] = useState([]);
   const [ productList, setProductList ] = useState([]);
+  
 
   const addToList = (id) => {
     const findElement = productList.find((element) => {
