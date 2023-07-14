@@ -11,34 +11,47 @@ import { useEffect, useState } from 'react';
 import NotFound from './features/NotFound';
 import Login from './features/pages/Login/Login';
 import { UserProfile } from './features/pages/UserProfile/UserProfile';
+import AuthRoute from './context/AuthRoute';
+import userJson from './data/Users.json';
 
 const App = () => {
-
   const [ characters, setCharacters ] = useState([]);
   const [ productList, setProductList ] = useState([]);
+  const [ user, setUser ] = useState(null);
 
+  const loginUser = (FormData) => {
+    const findUser = userJson.find((user) => {
+      return user.email === FormData.email && user.password === FormData.password;
+    });
+    if (findUser) {
+      setUser(findUser);
+    } else {
+      setUser(false);
+    }
+  };
 
   const addToList = (id) => {
     const findElement = productList.find((element) => {
       return element.id === id;
-    })
+    });
     if (!findElement) {
       const findCharacter = characters.find((char) => {
         return char.id === id;
-      })
+      });
       setProductList([ ...productList, findCharacter ]);
     }
-  }
+  };
 
   const deleteFromList = (updatedProductList) => {
     setProductList(updatedProductList);
-  }
+  };
 
   useEffect(() => {
-    axios.get('https://64a1dcaa0079ce56e2db71f6.mockapi.io/api/kombucha/products')
-      .then(response => {
+    axios
+      .get('https://64a1dcaa0079ce56e2db71f6.mockapi.io/api/kombucha/products')
+      .then((response) => {
         setCharacters(response.data);
-      })
+      });
   }, []);
 
   return (
@@ -47,17 +60,26 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products characters={characters} addToList={addToList} />} />
+        <Route
+          path="/products"
+          element={<Products characters={characters} addToList={addToList} />}
+        />
         <Route path="/detail/:id" element={<Detail characters={characters} />} />
-        <Route path="/basket" element={<Basket productList={productList} deleteFromList={deleteFromList} />} />
-        <Route path="/user" element={<UserProfile />} />
+        <Route
+          path="/basket"
+          element={<Basket productList={productList} deleteFromList={deleteFromList} />}
+        />
+        <Route
+          path="/user"
+          element={<AuthRoute user={user} component={<UserProfile user={user} />} />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
     </>
-  )
+  );
 };
 
 export default App;
