@@ -6,6 +6,7 @@ const Login = () => {
       <h1 className='login-title'>¡REGÍSTRATE Y FORMA PARTE DEL MUNDO KOMBUCHA!</h1>
       <form>
         <input type="text" />
+        
       </form>
     </div>
   )
