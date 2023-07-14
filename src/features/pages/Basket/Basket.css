@@ -28,8 +28,8 @@
 }
 
 .basket-product-li:hover{
-    background-color: rgb(247, 247, 169);
-    transition-duration: 1.5s; 
+    background-color: rgb(245, 192, 178);
+    transition-duration: 1.9s; 
     transition-property: all;
 }
 
@@ -38,6 +38,7 @@
     height: auto;
     border-radius: 190px;
     cursor: pointer;
+    background-color: white;
 }
 
 .basket-product-name{
@@ -60,4 +61,8 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
     transition-property: all;
     background-color: red;
+}
+
+.empty-basket-title{
+    text-align: center;
 }

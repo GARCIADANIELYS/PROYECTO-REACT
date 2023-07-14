@@ -1,0 +1,12 @@
+.main-login-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-title{
+    background-color: rgba(109, 189, 221, 0.641);
+    width: 100%;
+    text-align: center;
+}
+

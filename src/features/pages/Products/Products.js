@@ -9,7 +9,7 @@ const Products = ({ characters, addToList }) => {
   const handleClick = (ev) => {
     ev.preventDefault();
     addToList(ev.target.id);
-    alert("¡El producto seleccionado se ha añadido a la cesta!")
+    alert("YAAY! HAS AÑADIDO UN NUEVO PRODUCTO A LA CESTA!")
   }
 
   return (
