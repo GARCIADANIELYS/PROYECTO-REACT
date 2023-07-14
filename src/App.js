@@ -10,12 +10,13 @@ import Home from './features/pages/Home/Home';
 import { useEffect, useState } from 'react';
 import NotFound from './features/NotFound';
 import Login from './features/pages/Login/Login';
+import { UserProfile } from './features/pages/UserProfile/UserProfile';
 
 const App = () => {
 
   const [ characters, setCharacters ] = useState([]);
   const [ productList, setProductList ] = useState([]);
-  
+
 
   const addToList = (id) => {
     const findElement = productList.find((element) => {
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="/products" element={<Products characters={characters} addToList={addToList} />} />
         <Route path="/detail/:id" element={<Detail characters={characters} />} />
         <Route path="/basket" element={<Basket productList={productList} deleteFromList={deleteFromList} />} />
+        <Route path="/user" element={<UserProfile />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

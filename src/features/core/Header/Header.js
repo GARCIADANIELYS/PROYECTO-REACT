@@ -5,6 +5,7 @@ import { TfiShoppingCartFull } from 'react-icons/tfi';
 import { FiHome } from 'react-icons/fi';
 import { LuLogIn } from 'react-icons/lu';
 import { PiBeerBottleLight } from 'react-icons/pi';
+import { AiOutlineUser } from'react-icons/ai';
 
 const Header = () => {
   return (
@@ -23,6 +24,9 @@ const Header = () => {
           </li>
           <li>
             <Link className='nav-link' to="/login">LOGIN<LuLogIn className='icon' /></Link>
+          </li>
+          <li>
+            <Link className='nav-link' to="/user">PERFIL<AiOutlineUser /></Link>
           </li>
         </ul>
       </nav>
