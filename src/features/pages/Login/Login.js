@@ -29,7 +29,15 @@ const Login = () => {
         placeholder='email@ejemplo.com'/>
 
         <label className='password-label' htmlFor="password">Contraseña:</label>
-        <input className='input-field' type="password" id='password' name='password' placeholder='7456b8geFF65' />
+        <input className='input-field' 
+        type="password" 
+        id='password' 
+        name='password' 
+        onInput={handleInput}
+        value={formData.password}
+        placeholder='74b8gEn65' />
+
+        <input type="submit" value="Iniciar sesión"/>
         
       </form>
     </div>
