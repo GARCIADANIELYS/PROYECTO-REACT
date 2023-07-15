@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Button from '../../core/Button/Button';
 import './Login.css';
 
 const initial_state = {
@@ -6,13 +7,18 @@ const initial_state = {
   password: ''
 };
 
-const Login = () => {
+const Login = ({loginUser}) => {
 
   const [formData, setFormData] = useState(initial_state);
 
   const handleInput = (ev) => {
     const { name, value } = ev.target;
     setFormData({...formData, [name]: value });
+  }
+
+  const handleClick =() => {
+    loginUser(formData);
+    console.log("botón working!!!!");
   }
 
   return (
@@ -38,8 +44,8 @@ const Login = () => {
         value={formData.password}
         placeholder='74b8gEn65' />
 
-        <input type="submit" value="Iniciar sesión"/>
-        
+        <Button color="pink" text="iniciar sesión" onClick={handleClick} />
+                
       </form>
     </div>
   )

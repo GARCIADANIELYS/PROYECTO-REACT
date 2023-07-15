@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 import NotFound from './features/NotFound';
 import Login from './features/pages/Login/Login';
 import { UserProfile } from './features/pages/UserProfile/UserProfile';
-import AuthRoute from './context/AuthRoute';
+import AuthRoute from './authRoute/AuthRoute';
 import userJson from './data/Users.json';
 
 const App = () => {
@@ -73,7 +73,7 @@ const App = () => {
           path="/user"
           element={<AuthRoute user={user} component={<UserProfile user={user} />} />}
         />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login loginUser={loginUser}/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
