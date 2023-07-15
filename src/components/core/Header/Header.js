@@ -26,7 +26,7 @@ const Header = () => {
             <Link className='nav-link' to="/login">LOGIN<LuLogIn className='icon' /></Link>
           </li>
           <li>
-            <Link className='nav-link' to="/user">PERFIL<AiOutlineUser className='icon' /></Link>
+            <Link className='nav-link' to="/userprofile">PERFIL<AiOutlineUser className='icon' /></Link>
           </li>
         </ul>
       </nav>

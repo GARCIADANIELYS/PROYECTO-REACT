@@ -1,6 +1,10 @@
 import { Navigate } from "react-router-dom";
+import { useUserContext } from "../context/UserContext";
 
-const AuthRoute = ({user, component}) => {
+const AuthRoute = ({component}) => {
+
+  const user = useUserContext();
+
   if(user) return component;
   if(!user) return <Navigate to="/login" />;
 }

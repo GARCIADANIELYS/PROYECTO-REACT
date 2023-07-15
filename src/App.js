@@ -13,6 +13,7 @@ import Login from './components/pages/Login/Login';
 import userJson from './data/Users.json';
 import UserProfile from './components/pages/UserProfile/UserProfile';
 import AuthRoute from './components/authRoute/AuthRoute';
+import { UserContext } from './components/context/UserContext';
 
 const App = () => {
   const [ characters, setCharacters ] = useState([]);
@@ -27,7 +28,7 @@ const App = () => {
     });
     if (findUser) {
       setUser(findUser);
-      navigate("/user");
+      navigate("/");
     } else {
       setUser(false);
     }
@@ -60,6 +61,7 @@ const App = () => {
   return (
     <>
       <Header />
+      <UserContext.Provider value={user}>
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -70,16 +72,17 @@ const App = () => {
         <Route path="/detail/:id" element={<Detail characters={characters} />} />
         <Route
           path="/basket"
-          element={<AuthRoute user={user} component={<Basket productList={productList} deleteFromList={deleteFromList} />} />}
+          element={<AuthRoute component={<Basket productList={productList} deleteFromList={deleteFromList} />} />}
         />
         <Route
-          path="/user"
-          element={<AuthRoute user={user} component={<UserProfile user={user} />} />}
+          path="/userprofile"
+          element={<AuthRoute component={<UserProfile />} />}
         />
         <Route path="/login" element={<Login loginUser={loginUser}/>} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
+      </UserContext.Provider>
       <Footer />
     </>
   );
