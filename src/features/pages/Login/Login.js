@@ -16,10 +16,10 @@ const Login = ({loginUser}) => {
     setFormData({...formData, [name]: value });
   }
 
-  const handleClick =() => {
+  const handleClick = () => {
     loginUser(formData);
-    console.log("botón working!!!!");
-  }
+    console.log("¡El botón funciona!");
+  }  
 
   return (
     <div className='main-login-div'>
@@ -45,7 +45,7 @@ const Login = ({loginUser}) => {
         placeholder='74b8gEn65' />
 
         <Button color="pink" text="iniciar sesión" onClick={handleClick} />
-                
+
       </form>
     </div>
   )

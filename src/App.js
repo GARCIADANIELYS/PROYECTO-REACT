@@ -5,13 +5,12 @@ import Detail from './features/pages/Detail/Detail';
 import Basket from './features/pages/Basket/Basket';
 import Header from './features/core/Header/Header';
 import Footer from './features/core/Footer/Footer';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './features/pages/Home/Home';
 import { useEffect, useState } from 'react';
 import NotFound from './features/NotFound';
 import Login from './features/pages/Login/Login';
 import { UserProfile } from './features/pages/UserProfile/UserProfile';
-import AuthRoute from './authRoute/AuthRoute';
 import userJson from './data/Users.json';
 
 const App = () => {
@@ -19,12 +18,15 @@ const App = () => {
   const [ productList, setProductList ] = useState([]);
   const [ user, setUser ] = useState(null);
 
-  const loginUser = (FormData) => {
+  const navigate = useNavigate();
+
+  const loginUser = (formData) => {
     const findUser = userJson.find((user) => {
-      return user.email === FormData.email && user.password === FormData.password;
+      return user.email === formData.email && user.password === formData.password;
     });
     if (findUser) {
       setUser(findUser);
+      navigate("/user");
     } else {
       setUser(false);
     }
@@ -71,7 +73,7 @@ const App = () => {
         />
         <Route
           path="/user"
-          element={<AuthRoute user={user} component={<UserProfile user={user} />} />}
+          element={<UserProfile user={user} />}
         />
         <Route path="/login" element={<Login loginUser={loginUser}/>} />
         <Route path="*" element={<NotFound />} />
