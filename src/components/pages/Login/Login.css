@@ -6,19 +6,19 @@
 }
 
 .login-title{
-    background-color: rgba(109, 189, 221, 0.641);
+    background-color: rgba(116, 221, 109, 0.641);
     width: 100%;
     text-align: center;
 }
 
 .form-div{
     width: 460px;
+    margin: 160px 0px;
     padding: 15px 0 25px 0;
     display: flex;
     font-size: 20px;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0px;
     background-color: rgb(251, 216, 218);
     border-radius: 30px;
     border: 4px rgb(248, 205, 208) solid;
@@ -31,3 +31,18 @@
     border: 2px rgb(236,126,131) solid;
     border-radius: 5px;
 }
+
+.pink{
+    margin-top: 20px;
+    background-color: rgb(236,126,131);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.pink:hover,
+.input-field:hover{
+    font-size: 16px;
+}
+

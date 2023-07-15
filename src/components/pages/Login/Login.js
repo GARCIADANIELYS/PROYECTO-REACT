@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from '../../core/Button/Button';
 import './Login.css';
+import loginImg from '../../../images/background.jpeg';
 
 const initial_state = {
   email: '',
@@ -18,6 +19,7 @@ const Login = ({loginUser}) => {
 
   const handleClick = () => {
     loginUser(formData);
+    console.log("botón funcionando");
   }  
 
   return (
@@ -43,9 +45,10 @@ const Login = ({loginUser}) => {
         value={formData.password}
         placeholder='74b8gEn65' />
 
-        <Button color="pink" text="iniciar sesión" onClick={handleClick} />
-
+        <Button className="login-btn" color="pink" text="iniciar sesión" onClick={handleClick} />
       </form>
+
+      <img src={loginImg} alt="kombucha"/>
     </div>
   )
 }
