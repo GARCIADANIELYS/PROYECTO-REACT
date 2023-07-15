@@ -18,7 +18,6 @@ const Login = ({loginUser}) => {
 
   const handleClick = () => {
     loginUser(formData);
-    console.log("¡El botón funciona!");
   }  
 
   return (

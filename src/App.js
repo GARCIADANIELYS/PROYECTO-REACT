@@ -1,17 +1,18 @@
 import './styles/App.css';
 import axios from 'axios';
-import Products from './features/pages/Products/Products';
-import Detail from './features/pages/Detail/Detail';
-import Basket from './features/pages/Basket/Basket';
-import Header from './features/core/Header/Header';
-import Footer from './features/core/Footer/Footer';
+import Products from './components/pages/Products/Products';
+import Detail from './components/pages/Detail/Detail';
+import Basket from './components/pages/Basket/Basket';
+import Header from './components/core/Header/Header';
+import Footer from './components/core/Footer/Footer';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Home from './features/pages/Home/Home';
+import Home from './components/pages/Home/Home';
 import { useEffect, useState } from 'react';
-import NotFound from './features/NotFound';
-import Login from './features/pages/Login/Login';
-import { UserProfile } from './features/pages/UserProfile/UserProfile';
+import NotFound from './components/NotFound';
+import Login from './components/pages/Login/Login';
 import userJson from './data/Users.json';
+import UserProfile from './components/pages/UserProfile/UserProfile';
+import AuthRoute from './components/authRoute/AuthRoute';
 
 const App = () => {
   const [ characters, setCharacters ] = useState([]);
@@ -73,7 +74,7 @@ const App = () => {
         />
         <Route
           path="/user"
-          element={<UserProfile user={user} />}
+          element={<AuthRoute user={user} component={<UserProfile user={user} />} />}
         />
         <Route path="/login" element={<Login loginUser={loginUser}/>} />
         <Route path="*" element={<NotFound />} />
