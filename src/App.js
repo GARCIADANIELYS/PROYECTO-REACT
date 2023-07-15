@@ -70,7 +70,7 @@ const App = () => {
         <Route path="/detail/:id" element={<Detail characters={characters} />} />
         <Route
           path="/basket"
-          element={<Basket productList={productList} deleteFromList={deleteFromList} />}
+          element={<AuthRoute user={user} component={<Basket productList={productList} deleteFromList={deleteFromList} />} />}
         />
         <Route
           path="/user"
