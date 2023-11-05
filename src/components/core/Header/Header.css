@@ -24,13 +24,8 @@
 .nav-link:hover {
     color: black;
     font-size: medium;
-    background-color: rgb(253,225,227);
     border-radius: 10px;
     letter-spacing: 3px;
     transition-property: all;
     transition-duration: 0.7s;
-}
-
-.icon{
-    margin-left: 5px;
 }

@@ -14,19 +14,19 @@ const Header = () => {
         <img src={kombuchaLogo} alt='kombucha page' />
         <ul className='navigation-list'>
           <li>
-            <Link className='nav-link' to="/">HOME<FiHome className='icon' /></Link>
+            <Link className='nav-link' to="/">HOME</Link>
           </li>
           <li>
-            <Link className='nav-link' to="/products">PRODUCTOS<PiBeerBottleLight className='icon' /></Link>
+            <Link className='nav-link' to="/products">PRODUCTOS</Link>
           </li>
           <li>
-            <Link className='nav-link' to="/basket">CESTA<TfiShoppingCartFull className='icon' /></Link>
+            <Link className='nav-link' to="/basket">CESTA</Link>
           </li>
           <li>
-            <Link className='nav-link' to="/login">LOGIN<LuLogIn className='icon' /></Link>
+            <Link className='nav-link' to="/login">ENTRAR</Link>
           </li>
           <li>
-            <Link className='nav-link' to="/userprofile">PERFIL<AiOutlineUser className='icon' /></Link>
+            <Link className='nav-link' to="/userprofile">PERFIL</Link>
           </li>
         </ul>
       </nav>
