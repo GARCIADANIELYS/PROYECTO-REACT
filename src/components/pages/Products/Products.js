@@ -20,7 +20,9 @@ const Products = ({ characters, addToList }) => {
       {characters.map((char) => {
         return (
           <li className='product-li' key={char.id}>
-            <img className='product-image' src={char.image} alt={char.name} />
+          <Link to={`/detail/${char.id}`}>
+          <img className='product-image' src={char.image} alt={char.name} />
+          </Link>
             <Link className='product-link' to={`/detail/${char.id}`}>
               <h4 className='product-name'>{char.name}</h4>
             </Link>

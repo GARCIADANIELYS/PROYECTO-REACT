@@ -43,6 +43,7 @@ h1{
 .compu-title{
     text-align: center;
     letter-spacing: 4px;
+    padding-bottom: 20px;
 }
 
 .compu-gif{
@@ -55,6 +56,7 @@ h1{
     margin: auto;
     font-size: 18px;
     text-align: center;
+    padding-top: 20px;
 }
 
 .proyect-section{
@@ -89,7 +91,7 @@ h1{
 .kombu-title:hover,
 .compu-title:hover{
     letter-spacing: 6px;
-    cursor: pointer;
+    cursor: default;
 }
 
 .bundle-section{
@@ -101,7 +103,7 @@ h1{
 }
 
 .bundle-paragraph{
-    width: 700px;
+    width: 1000px;
     font-size: 22px;
     margin-bottom: 65px;
     text-align: center;
@@ -109,7 +111,7 @@ h1{
 
 .bundle-img{
     margin-bottom: 40px;
-    opacity: 0.95;
+    opacity: 0.65;
 }
 
 .enjoy-section{

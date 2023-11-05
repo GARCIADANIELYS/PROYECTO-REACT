@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
+    }
 
 .product-li{
     overflow: hidden;
@@ -56,7 +56,7 @@
 }
 
 .green{
-    padding: 5px;
+    padding: 5px 10px;
     background-color: rgb(153, 249, 10);
     color: rgb(0, 65, 0);
     border-radius: 13px;
@@ -72,9 +72,9 @@
 }
 
 .clicked-button{
-    background-color: rgb(145, 46, 216);
+    background-color: rgba(153, 249, 10, 0.46);
     color: rgb(37, 5, 34);
     border-radius: 13px;
     border: none;
-    padding: 5px;
+    padding: 5px 10px;
 }

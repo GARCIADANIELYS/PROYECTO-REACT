@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin: 25px 0px 20px 0px;
+    margin: 48px 0px 20px 0px;
 }
 
 .detail-title{
@@ -19,6 +19,7 @@
     flex-direction: column;
     align-items: center;
     border-radius: 30px;
+    border: 1px solid antiquewhite;
     background-color: antiquewhite;
 }
 
@@ -47,7 +48,7 @@
 }
 
 .eco{
-    margin-top: 20px;
+    margin: 25px 0;
 }
 
 .big-image-div{
@@ -65,7 +66,7 @@
 
 .kombucha-image:hover{
     border: 10px rgba(250, 105, 177, 0.387) solid;
-    cursor: pointer;
+    cursor: default;
     transition-duration: 1s;
 }
 
@@ -73,12 +74,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 30px;
+    margin-top: 90px;
 }
 
 .product-detail-eco-logo{
     width: 60px;
-    padding: 10px 0px;
+    margin-bottom: 23px;
 }
 
 .product-detail-description{
