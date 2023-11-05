@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import './Products.css'
 import Button from '../../core/Button/Button';
 import eco from '../../../images/logoeco.png';
@@ -6,10 +7,12 @@ import { Link } from 'react-router-dom';
 
 const Products = ({ characters, addToList }) => {
 
+  const [clickedButtonId, setClickedButtonId] = useState(null);
+
   const handleClick = (ev) => {
     ev.preventDefault();
     addToList(ev.target.id);
-    alert("YAAY! HAS AÑADIDO UN NUEVO PRODUCTO A LA CESTA!")
+    setClickedButtonId(ev.target.id)
   }
 
   return (
@@ -24,7 +27,12 @@ const Products = ({ characters, addToList }) => {
             <p className='product-description'>*{char.description}.</p>
             <img className='product-eco-logo' src={eco} alt={char.name} />
             <h4 className='product-price'>{char.price} €</h4>
-            <Button color="green" icon={<BiCartAdd />} text="añadir al carrito" id={char.id} onClick={handleClick} />
+            <Button
+            color={clickedButtonId === char.id ? 'clicked-button' : 'green'}
+            icon={<BiCartAdd />} 
+            text="añadir al carrito" 
+            id={char.id} 
+            onClick={handleClick} />
           </li>
         )
       })}

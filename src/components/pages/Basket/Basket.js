@@ -8,7 +8,6 @@ const Basket = ({ productList, deleteFromList }) => {
   const handleDelete = (id) => {
     const updatedProductList = productList.filter(product => product.id !== id);
     deleteFromList(updatedProductList);
-    alert("¡PRODUCTO ELIMINADO!");
   }
 
   return (
